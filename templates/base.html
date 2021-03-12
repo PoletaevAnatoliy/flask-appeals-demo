@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <nav>
+            <h1>Сайт ремонта водоснабжения</h1>
+            {% if current_user.is_authenticated %}
+                <p>{{ current_user.name }} {{ current_user.surname }}</p>
+                <a href="/logout">Выйти из аккаунта</a>
+            {% else %}
+                <p>Вы не зарегистрированы.
+                    <a href="/register">Зарегистрироваться</a>
+                    <a href="/login">Войти в аккаунт</a>
+                </p>
+            {% endif %}
+            <a href="/list_appeals">Текущие заявки</a>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

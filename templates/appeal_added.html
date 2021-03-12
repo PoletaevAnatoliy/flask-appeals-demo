@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Вы успешно добавили заявку</h3>
+<p>Адрес: {{ form.address.data }}</p>
+<p>Проблема с: {{ form.appeal_type.data }}</p>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/add_appeal" method="post" novalidate>
+        {{ form.csrf_token }}
+        <p>{{ form.address.label }} {{ form.address() }}</p>
+        <p>{{ form.appeal_type.label }} {{ form.appeal_type() }}</p>
+        <p>{{ form.submit.label }} {{ form.submit() }}</p>
+    </form>
+{% endblock %}

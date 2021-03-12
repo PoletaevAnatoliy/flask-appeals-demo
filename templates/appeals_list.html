@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        <tr><td>Номер</td><td>Место</td><td>Проблема</td><td>Исполнитель</td></tr>
+        {% for appeal in appeals %}
+            <tr>
+                <td>{{ appeal.id }}</td>
+                <td>{{ appeal.address }}</td>
+                <td>{{ appeal.kind }}</td>
+                {% if appeal.worker %}
+                    <td>{{ appeal.worker.surname }}</td>
+                {% else %}
+                    <td><a href="take/{{ appeal.id }}">Взять</a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
